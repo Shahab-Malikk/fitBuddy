@@ -1,6 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
-
-
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   personData: [
@@ -10,34 +8,32 @@ const initialState = {
       weight: null,
       height: null,
       goals: null,
-    }
+    },
   ],
-
-}
+};
 
 export const profileSlice = createSlice({
-  name: 'profile',
+  name: "profile",
   initialState,
   reducers: {
     setUserName: (state, action) => {
-      state.personData[0].name = action.payload
+      state.personData[0].name = action.payload;
     },
     setGender: (state, action) => {
-      state.personData[0].gender = action.payload
+      state.personData[0].gender = action.payload;
     },
     setWeightHeight: (state, action) => {
-      state.personData[0].weight = action.payload.weight
-      state.personData[0].height = action.payload.height
+      state.personData[0].weight = action.payload.weight;
+      state.personData[0].height = action.payload.height;
     },
     setGoals: (state, action) => {
-      state.personData[0].goals = action.payload
-    }
-
+      state.personData[0].goals = action.payload;
+    },
   },
-})
+});
 
-
-export const { setUserName,setGender,setWeightHeight,setGoals } = profileSlice.actions
+export const { setUserName, setGender, setWeightHeight, setGoals } =
+  profileSlice.actions;
 
 export const profileData = (state) => state.profileData.personData;
-export default profileSlice.reducer
+export default profileSlice.reducer;
